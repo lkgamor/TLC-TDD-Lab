@@ -27,19 +27,16 @@ public class Fibonacci {
 
     static List<Integer> fibonacci(Integer number) {
 
-        if(number <= 0){
-            throw new InvalidInputException("Invalid Number Provided");
-        }
+        if(number <= 0) throw new InvalidInputException("Invalid Number Provided");
 
-        else if(number == 1) {
-            return List.of(0);
-        }
+        if(number == 1) return List.of(0);
 
-        else if(number == 2) {
-            return List.of(0,1);
-        }
+        if(number == 2) return List.of(0,1);
 
-        //number
+        return getFibonacciNumbers(number);
+    }
+
+    private static List<Integer> getFibonacciNumbers(Integer number) {
         List<Integer> fibonacciList = Arrays.asList(new Integer[number]);
         for(int i = 0; i < fibonacciList.size(); i++){
             if (i < 2) {
@@ -48,8 +45,6 @@ public class Fibonacci {
                 fibonacciList.set(i, fibonacciList.get(i-1) + fibonacciList.get(i-2));
             }
         }
-
-        System.out.println(fibonacciList);
         return fibonacciList;
     }
 
