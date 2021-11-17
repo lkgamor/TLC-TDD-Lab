@@ -15,7 +15,20 @@ TIPS:
 DEFINITION OF TRHE FIBONACCI SERIES
 The Fibonacci sequence is a series of numbers: 0 1 1 2 3 5 8 13 21 34 ...
 The next number is found by adding the two numbers before it.
- */
+*/
+
+import com.turntabl.tdd.exceptions.InvalidInputException;
+
+import java.util.List;
 
 public class Fibonacci {
+
+    static Integer fibonacci(Integer number) throws InvalidInputException {
+        if(number <= 0){
+            throw new InvalidInputException("Invalid Number Provided");
+        }
+        
+        return 0;
+    }
+
 }
