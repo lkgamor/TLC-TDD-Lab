@@ -19,16 +19,38 @@ The next number is found by adding the two numbers before it.
 
 import com.turntabl.tdd.exceptions.InvalidInputException;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Fibonacci {
 
-    static Integer fibonacci(Integer number) throws InvalidInputException {
+    static List<Integer> fibonacci(Integer number) {
+
         if(number <= 0){
             throw new InvalidInputException("Invalid Number Provided");
         }
-        
-        return 0;
+
+        else if(number == 1) {
+            return List.of(0);
+        }
+
+        else if(number == 2) {
+            return List.of(0,1);
+        }
+
+        //number
+        List<Integer> fibonacciList = Arrays.asList(new Integer[number]);
+        for(int i = 0; i < fibonacciList.size(); i++){
+            if (i < 2) {
+                fibonacciList.set(i, i);
+            } else {
+                fibonacciList.set(i, fibonacciList.get(i-1) + fibonacciList.get(i-2));
+            }
+        }
+
+        System.out.println(fibonacciList);
+        return fibonacciList;
     }
 
 }

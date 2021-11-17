@@ -17,11 +17,16 @@ class FibonacciTest {
 
     @Test
     void testFibonacciSeriesOne() {
-        assertEquals(0, Fibonacci.fibonacci(1));
+        assertEquals(List.of(0), Fibonacci.fibonacci(1));
     }
 
     @Test
-    void testFibonacciSeriesTwoOrAbove() {
+    void testFibonacciSeriesTwo() {
         assertEquals(List.of(0, 1), Fibonacci.fibonacci(2));
+    }
+
+    @Test
+    void testFibonacciSeriesAboveTwo() {
+        assertEquals(List.of(0, 1, 1, 2, 3, 5, 8), Fibonacci.fibonacci(7));
     }
 }
